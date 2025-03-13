@@ -59,6 +59,11 @@ def stop():
     global is_running
     is_running = False
 
+def on_left_stick_changed(x, y):
+    print(f"Left stick -> X={x}, Y={y}")
+
+def on_right_stick_changed(x, y):
+    print(f"Right stick -> X={x}, Y={y}")
 
 # === Cross 按鈕回調 ===
 def on_cross_btn_pressed():
@@ -93,6 +98,10 @@ def on_error(error):
 controller.btn_cross.on_down(on_cross_btn_pressed)
 controller.btn_cross.on_up(on_cross_btn_released)
 controller.btn_cross.on_change(on_cross_btn_changed)
+
+# 蘑菇頭回調函數
+controller.left_stick.on_change(on_left_stick_changed)
+controller.right_stick.on_change(on_right_stick_changed)
 
 # 註冊 PS 按鈕回調函數
 controller.btn_ps.on_down(on_ps_btn_pressed)
