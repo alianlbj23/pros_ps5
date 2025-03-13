@@ -42,6 +42,18 @@ controller.btn_l3.on_change(
 controller.btn_r3.on_change(
     lambda pressed: print("R3 pressed") if pressed else print("R3 released")
 )
+controller.btn_up.on_change(
+    lambda pressed: print("D-Pad Up pressed") if pressed else print("D-Pad Up released")
+)
+controller.btn_down.on_change(
+    lambda pressed: print("D-Pad Down pressed") if pressed else print("D-Pad Down released")
+)
+controller.btn_left.on_change(
+    lambda pressed: print("D-Pad Left pressed") if pressed else print("D-Pad Left released")
+)
+controller.btn_right.on_change(
+    lambda pressed: print("D-Pad Right pressed") if pressed else print("D-Pad Right released")
+)
 # 切換 `is_running`，停止程式
 def stop():
     global is_running
